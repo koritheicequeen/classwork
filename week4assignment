@@ -1,0 +1,172 @@
+package Labs;
+
+public class week4Assignment {
+
+	public static void main(String[] args) {
+		int averageStep = 0;
+		String AllLetters="";
+		String Added = "";
+		// creating variables outside of the loops they are used in 
+		//because I don't want the values to be averaged in every iteration
+		
+		int[] ages = new int[]{3, 9, 23, 64, 2, 8, 28, 93};
+		//setting up the int array with the listed inputs
+		System.out.println(ages[ages.length-1]-ages[0]);
+		//printing the last number after subtracting the first number
+		int[] ages2 = new int[]{3, 9, 23, 64, 2, 8, 28, 93,50};
+		//since it didn't tell me what to use as my 9th, i just did 50 but this is a new array with 9
+		System.out.println(ages2[ages2.length-1]-ages2[0]);
+		//printing the last number after subtracting the first number
+		for (int age : ages) {
+			//naming every element in the array age and going through all of them
+			int totalAge =0;
+			//creating a new variable
+			totalAge += age;
+			//adding every age onto the previous ages
+			averageStep = totalAge;
+			//grabbing the value so i can find the average
+		}
+		int average = averageStep/ages.length;
+		//finding the average
+		System.out.println(average);
+		//printing the value
+		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+		//new string array with 6 names
+		for (String name : names) {
+			//naming every string in the array name and going through all of them
+			AllLetters +=name;
+			//Concatenating all of the names together no spaces
+			Added = Added+name+" ";
+			//Concatenating all of the names together with spaces
+		}
+				int averageLength = AllLetters.length()/names.length;
+				//finding the average
+				System.out.println(averageLength);
+				//printing the average
+				String last = names[names.length-1];
+				//setting last equal to the last name in the array
+				int first = ages[0];
+				// setting first equal to the first name in the array
+				int[] namesLength = new int[names.length];
+				//setting the max number of values equal to how many names in names
+				for(int i =0; i< names.length; i++) {
+					//creating a loop to go through every name in names
+					namesLength[i] = names[i].length();
+					//Assigning values equal to every names length
+				}
+				int totalNameNumber = 0;
+				//new variable
+				for (int number : namesLength) {
+					//new loop for every number in namesLength
+					totalNameNumber += number;
+					//adding all of the numbers together
+				}
+				System.out.println(totalNameNumber);
+				//printing it out
+				
+				
+				
+				
+	}
+	private String nameRepeat(String word, int n) {
+		String combined ="";
+		for (int i = 0; i<n; i++) {
+			combined +=word;
+		}
+		return combined;
+	}
+	/*the first line declares the method, the second line creates a new blank string
+	 * then using a for loop, it concatenates itself as many times as equal to n
+	 */
+	private String fullname(String first, String last) {
+		String fullname = first + " " + last;
+		return fullname;
+	}
+	/* declares the method, passes through 2 strings
+	 * declares variable equal to the concatenation with a space in between
+	 * returns the variable
+	 */
+	private boolean isOver100(int[] array) {
+		int combinedTotal = 0;
+		for (int number : array) {
+			combinedTotal +=number;
+		}
+		if (combinedTotal>100) {
+			return true;
+		} else return false;
+	}
+	/*declares the method, passes in an array named array
+	 * declares a variable
+	 * creates a loop for every number in array and adds it to combinedTotal
+	 * if total is greater than 100, return true, otherwise it returns false
+	 */
+	private double averageChecker(double[] Double) {
+		double average = 0;
+		for (double number : Double) {
+			average +=number;
+		}
+		double averageReturn = average/Double.length;
+		return averageReturn;
+	}
+	/*declares the method, passes a double array named Double
+	 * declares a variable to use later
+	 * creates a loop for every number in double and adds them to average
+	 * creates a new averageReturn variable that is equal to the average and returns it
+	 */
+	private boolean averageDoubleChecker(double[] Double1, double[] Double2) {
+		double average = 0;
+		for (double number : Double1) {
+			average +=number;
+		}
+		double averageReturn = average/Double1.length;
+		/*declaring a variable
+		 * running a loop for every number in Double1 adding them all together
+		 * then finds the average and puts it equal to averageReturn for later use
+		 */
+		
+		double average2 = 0;
+		for (double number : Double2) {
+			average2 +=number;
+		}
+		double averageReturn2 = average2/Double2.length;
+		/*declaring a variable
+		 * running a loop for every number in Double2 adding them all together
+		 * then finds the average and puts it equal to averageReturn2 for later use
+		 */
+		
+		if (averageReturn > averageReturn2) {
+			return true;
+		} else return false;
+		/*checks if averagereturn 1 is larger than averagereturn2
+		 * if yes, then it returns true, otherwise it returns false.
+		 */
+		
+	}
+	private boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+		if (isHotOutside && moneyInPocket > 10.50) {
+			return true;
+		}else return false;
+	}
+	/*declaring method followed by an if statement.
+	 * since isHotOutside is already boolean, we don't have to check if its true
+	 * check if MoneyInpocket is greater than 10.50
+	 * if yes, it returns true, otherwise its false	 */
+	private void currentlevel(double level, int ExpGained) {
+		int currentLevel = (int)level;
+		double expUsed = currentLevel*currentLevel*.5+currentLevel*.5;
+		int intexpused = (int)expUsed;
+		int currentEXP = ExpGained - intexpused;
+		System.out.println(currentEXP+"/"+level+1);
+	}
+	/*I roleplay a lot using a game, me and my friends invented ourselves pulling resources from a lot of sources
+	 * to level up in this game, your current XP has to be higher than your level, then it resets.
+	 * this method converts level to an int and uses it as currentLevel
+	 * then it calculates how much was xp used to get to the last whole level
+	 * since itll calculate that you are level 5.3 instead of just level 5. 
+	 * since the formula requires .5 even though itll turn out as a whole number
+	 * it requires exp used to be a double
+	 * converting it into a int, then declaring a new variable for easier use
+	 * and lastly printing it so 16 for example will appear as 1/6 since 15 of it is being use to get u to level 5
+	 */
+	
+}
