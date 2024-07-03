@@ -1,0 +1,25 @@
+package week5assignment;
+
+public class AsterickLogger implements Logger {
+
+	@Override
+	public void log(String log) {
+		// TODO Auto-generated method stub
+		System.out.println("***"+log+"***");
+		System.out.println("");
+	}
+
+	@Override
+	public void error(String error) {
+		StringBuilder string = new StringBuilder();
+		string.append("*************");
+		for (int i = 0; i<error.length();i++) {
+		string.append("*");}
+		System.out.println(string);
+		System.out.println("***Error: "+ error+ "***");
+		System.out.println(string);
+		System.out.println("");
+		
+	}
+
+}
